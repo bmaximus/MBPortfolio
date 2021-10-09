@@ -1,0 +1,43 @@
+﻿@page "/experience"
+@using MBPortfolio.Data
+@inject ExperienceService experienceService
+
+
+
+@if (experiences == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    @foreach (var experience in experiences)
+    {
+        <div class="m-1">
+            <p class="m-0"><strong>@experience.JobTitle</strong></p>
+            <p class="m-0">
+                <i>@experience.CompanyName</i>
+            </p>
+            <p>
+                <i>@experience.DateFrom.ToString("yyyy MMM") - @(experience.DateTo.HasValue? experience.DateTo.Value.ToString("yyyy MMM"): "Present")</i>
+            </p>
+            @foreach (var duty in experience.Duties)
+            {
+                <p class="m-0">
+                    @duty
+                </p>
+            }
+        </div>
+        <text>&nbsp;</text>
+    }
+}
+
+
+@code {
+    private List<MBPortfolio.Data.Experience> experiences;
+
+    protected override async Task OnInitializedAsync()
+    {
+        experiences = await experienceService.GetExperiences();
+    }
+}
