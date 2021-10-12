@@ -1,0 +1,40 @@
+﻿@page "/education"
+@using MBPortfolio.Data
+@inject EducationService educationService
+
+
+
+@if (educations == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <ui style="list-style-type:none;">
+        @foreach (var education in educations)
+        {
+            <li class="m-1 font-weight-bold" >@education.UniversityName, @education.Location</li>
+            <p>
+                <i>@education.DegreeLevel.ToString() in @education.Department</i>
+                <i>@education.DateFrom.ToString("yyyy MMM") - @education.DateTo.ToString("yyyy MMM")</i>
+                @*<ui style="list-style-type:square;">
+                    @foreach (var duty in education.Duties)
+                    {
+                        <li>@duty</li>
+                    }
+                </ui>*@
+
+            </p>
+        }
+    </ui>
+}
+
+
+@code {
+    private List<MBPortfolio.Data.Education> educations;
+
+    protected override async Task OnInitializedAsync()
+    {
+        educations = await educationService.GetEducations();
+    }
+}

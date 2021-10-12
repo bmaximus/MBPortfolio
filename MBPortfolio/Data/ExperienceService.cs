@@ -39,7 +39,7 @@ namespace MBPortfolio.Data
 
                 new Experience(
                 new DateTime(2016, 11, 1),
-                new DateTime(2017, 4, 1),
+                new DateTime(2018, 4, 1),
                 jobTitle: "Software Developer C#/SQL/Java/\"C/AL\" ",
                 companyName: "NetU Consultants - Nicosia, Cyprus",
                 duties: new List<string>()
@@ -50,9 +50,9 @@ namespace MBPortfolio.Data
                 }
                 ),
                 new Experience(
-                new DateTime(2017, 4, 1),
+                new DateTime(2018, 5, 1),
                 null,
-                jobTitle: "Software Developer C#/SQL",
+                jobTitle: "Sr. Software Developer C#/SQL",
                 companyName: "Odyssey Consultants - Nicosia, Cyprus",
                 duties: new List<string>()
                 {

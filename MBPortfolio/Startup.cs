@@ -30,6 +30,7 @@ namespace MBPortfolio
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<ExperienceService>();
+            services.AddSingleton<EducationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,26 +10,23 @@
 }
 else
 {
-
-    @foreach (var experience in experiences)
-    {
-        <div class="m-1">
-            <p class="m-0"><strong>@experience.JobTitle</strong></p>
-            <p class="m-0">
-                <i>@experience.CompanyName</i>
-            </p>
+    <ui style="list-style-type:none;">
+        @foreach (var experience in experiences)
+        {
+            <li class="m-1 font-weight-bold" >@experience.JobTitle</li>
             <p>
+                <i>@experience.CompanyName</i>
                 <i>@experience.DateFrom.ToString("yyyy MMM") - @(experience.DateTo.HasValue? experience.DateTo.Value.ToString("yyyy MMM"): "Present")</i>
+                <ui style="list-style-type:square;">
+                    @foreach (var duty in experience.Duties)
+                    {
+                        <li>@duty</li>
+                    }
+                </ui>
+
             </p>
-            @foreach (var duty in experience.Duties)
-            {
-                <p class="m-0">
-                    @duty
-                </p>
-            }
-        </div>
-        <text>&nbsp;</text>
-    }
+        }
+    </ui>
 }
 
 
