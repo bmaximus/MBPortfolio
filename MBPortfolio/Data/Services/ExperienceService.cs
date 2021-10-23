@@ -56,9 +56,9 @@ namespace MBPortfolio.Data
                 companyName: "Odyssey Consultants - Nicosia, Cyprus",
                 duties: new List<string>()
                 {
-                    "- Developing new application components for existing public components",
-                    "- Working on web application with .NET and Angular",
-                    "- Participating on automotive industry integration development"
+                    "- Working with BigData and Elastic",
+                    "- Working on web application with .NET Framework / Core",
+                    "- Developing and maintaining iOS/Adroid applications based on Xamarin"
                 }
                 )
             }.OrderByDescending(d => d.DateFrom).ToList());
