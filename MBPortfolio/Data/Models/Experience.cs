@@ -14,12 +14,14 @@ namespace MBPortfolio.Data
             JobTitle = jobTitle;
             CompanyName = companyName;
             Duties = duties;
+            Icon = "../img/expert.png";
         }
 
         public DateTime DateFrom { get; set; }
         public DateTime? DateTo { get; set; }
         public string JobTitle { get; set; }
         public string CompanyName { get; set; }
+        public string Icon { get; set; }
         public List<string> Duties { get; set; }
     }
 }

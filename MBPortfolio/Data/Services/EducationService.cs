@@ -18,6 +18,7 @@ namespace MBPortfolio.Data
                 universityName: "University of Macedonia",
                 location: "Thessaloniki, Greece",
                 department: "Information Technology",
+                icon: "../img/barchelors.png",
                 degreeLevel: DegreeLevel.Bachelors),
                
                 new Education(
@@ -26,6 +27,7 @@ namespace MBPortfolio.Data
                 universityName: "University of Cyprus",
                 location: "Nicosia, Cyprus",
                 department: "Computer Science",
+                icon: "../img/masters.png",
                 degreeLevel: DegreeLevel.Masters)
             }.OrderByDescending(d => d.DateFrom).ToList());
         }

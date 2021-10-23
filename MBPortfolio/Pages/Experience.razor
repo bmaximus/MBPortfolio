@@ -4,29 +4,62 @@
 
 
 
+<h2 class="font-weight-light border-bottom">EXPERIENCE</h2>
+
 @if (experiences == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <ui style="list-style-type:none;">
-        @foreach (var experience in experiences)
-        {
-            <li class="m-1 font-weight-bold" >@experience.JobTitle</li>
-            <p>
-                <i>@experience.CompanyName</i>
-                <i>@experience.DateFrom.ToString("yyyy MMM") - @(experience.DateTo.HasValue? experience.DateTo.Value.ToString("yyyy MMM"): "Present")</i>
-                <ui style="list-style-type:square;">
-                    @foreach (var duty in experience.Duties)
-                    {
-                        <li>@duty</li>
-                    }
-                </ui>
+    @foreach (var experience in experiences)
+    {
+        <div class="m-2">
+            <MatCard class="demo-mat-card">
+                <MatCardContent>
+                    <MatCard>
+                        <MatCardContent>
 
-            </p>
-        }
-    </ui>
+                            <div class="demo-mat-card-content">
+                                <MatHeadline6 class="demo-mat-card-clean-margin">
+                                    <img src="@experience.Icon" /> @experience.JobTitle
+                                </MatHeadline6>
+                                <MatSubtitle1 class="demo-mat-card-clean-margin">
+                                    @experience.CompanyName, @experience.DateFrom.ToString("yyyy MMM") - @(experience.DateTo.HasValue? experience.DateTo.Value.ToString("yyyy MMM"): "Present")
+                                </MatSubtitle1>
+
+                                @foreach (var duty in experience.Duties)
+                                {
+                                    <MatSubtitle2 class="demo-mat-card-clean-margin">
+                                        @duty
+                                    </MatSubtitle2>
+                                }
+
+                            </div>
+                        </MatCardContent>
+                    </MatCard>
+                </MatCardContent>
+            </MatCard>
+        </div>
+    }
+
+    @*<ui style="list-style-type:none;">
+            @foreach (var experience in experiences)
+            {
+                <li class="m-1 font-weight-normal" style="font-size:x-large">@experience.JobTitle</li>
+                <p>
+                    <i>@experience.CompanyName</i>
+                    <i>@experience.DateFrom.ToString("yyyy MMM") - @(experience.DateTo.HasValue? experience.DateTo.Value.ToString("yyyy MMM"): "Present")</i>
+                    <ui style="list-style-type:square;">
+                        @foreach (var duty in experience.Duties)
+                        {
+                            <li>@duty</li>
+                        }
+                    </ui>
+
+                </p>
+            }
+        </ui>*@
 }
 
 

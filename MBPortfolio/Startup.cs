@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MBPortfolio.Data;
+using MatBlazor;
 
 namespace MBPortfolio
 {
@@ -28,9 +29,12 @@ namespace MBPortfolio
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddMatBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<ExperienceService>();
             services.AddSingleton<EducationService>();
+            services.AddSingleton<HardskillService>();
+            services.AddSingleton<SoftskillService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

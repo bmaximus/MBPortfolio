@@ -3,6 +3,7 @@
 @inject EducationService educationService
 
 
+<h2 class="font-weight-light border-bottom">EDUCATION</h2>
 
 @if (educations == null)
 {
@@ -10,25 +11,45 @@
 }
 else
 {
-    <ui style="list-style-type:none;">
-        @foreach (var education in educations)
-        {
-            <li class="m-1 font-weight-bold" >@education.UniversityName, @education.Location</li>
-            <p>
-                <i>@education.DegreeLevel.ToString() in @education.Department</i>
-                <i>@education.DateFrom.ToString("yyyy MMM") - @education.DateTo.ToString("yyyy MMM")</i>
-                @*<ui style="list-style-type:square;">
-                    @foreach (var duty in education.Duties)
-                    {
-                        <li>@duty</li>
-                    }
-                </ui>*@
+    @foreach (var education in educations)
+    {
+        <div class="m-2">
+            <MatCard class="demo-mat-card">
+                <MatCardContent>
+                    <MatCard>
+                        <MatCardContent>
 
-            </p>
-        }
-    </ui>
+                            <div class="demo-mat-card-content">
+                                <MatHeadline6 class="demo-mat-card-clean-margin">
+                                    <img src="@education.Icon" />  @education.DegreeLevel.ToString() in @education.Department
+                                    @*<MatProgressBar Class="bg-success" Progress="@hardskill.Percentage" />*@
+                                </MatHeadline6>
+                                <MatSubtitle2 class="demo-mat-card-clean-margin">
+                                    @education.UniversityName, @education.Location
+                                </MatSubtitle2>
+                                <MatSubtitle2>
+                                    @education.DateFrom.ToString("yyyy MMM") - @education.DateTo.ToString("yyyy MMM")
+                                </MatSubtitle2>
+                            </div>
+                        </MatCardContent>
+                    </MatCard>
+                </MatCardContent>
+            </MatCard>
+        </div>
+    }
+
+
+    @*<ui style="list-style-type:none;">
+            @foreach (var education in educations)
+            {
+                <li class="m-1 font-weight-normal" style="font-size:x-large">@education.UniversityName, @education.Location</li>
+                <p>
+                    <i>@education.DegreeLevel.ToString() in @education.Department</i>
+                    <i>@education.DateFrom.ToString("yyyy MMM") - @education.DateTo.ToString("yyyy MMM")</i>
+                </p>
+            }
+        </ui>*@
 }
-
 
 @code {
     private List<MBPortfolio.Data.Education> educations;

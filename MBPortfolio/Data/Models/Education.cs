@@ -7,7 +7,7 @@ namespace MBPortfolio.Data
 {
     public class Education
     {
-        public Education(DateTime dateFrom, DateTime dateTo, DegreeLevel degreeLevel, string department, string universityName, string location)
+        public Education(DateTime dateFrom, DateTime dateTo, DegreeLevel degreeLevel, string department, string universityName, string location, string icon)
         {
             DateFrom = dateFrom;
             DateTo = dateTo;
@@ -15,6 +15,7 @@ namespace MBPortfolio.Data
             Department = department;
             UniversityName = universityName;
             Location = location;
+            Icon = icon;
         }
 
         public DateTime DateFrom { get; set; }
@@ -23,6 +24,7 @@ namespace MBPortfolio.Data
         public string Department { get; set; }
         public string UniversityName { get; set; }
         public string Location { get; set; }
+        public string Icon { get; set; }
     }
 
     public enum DegreeLevel

@@ -1,47 +1,44 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
-    <strong class="navbar-brand" >M. B.</strong>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
+﻿<nav class="navbar navbar-expand-md ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon float-right"></span>
     </button>
-</div>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav nav flex-column">
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi fa fa-user" aria-hidden="true"></span> About
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="experience">
-                <span class="oi fa fa-briefcase" aria-hidden="true"></span> Experience
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="education">
-                <span class="oi fa fa-university" aria-hidden="true"></span> Education
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="hardskills">
-                <span class="oi fa fa-cogs" aria-hidden="true"></span> Hard Skills
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="softskills">
-                <span class="oi fa fa-puzzle-piece" aria-hidden="true"></span> Soft Skills
-            </NavLink>
-        </li>
-    </ul>
-</div>
 
-@code {
-    private bool collapseNavMenu = true;
-
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+            <li class="nav-item px-3">
+                <a class="nav-link" href="me">
+                    <div class="h5">
+                        Maxim Batiridis
+                        <div class="h5 text-nowrap">Software Developer</div>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="about" Match="NavLinkMatch.All">
+                    <span class="oi fa fa-user" aria-hidden="true"></span> About
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="experience">
+                    <span class="oi fa fa-briefcase" aria-hidden="true"></span> Experience
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="education">
+                    <span class="oi fa fa-university" aria-hidden="true"></span> Education
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="hardskills">
+                    <span class="oi fa fa-cogs" aria-hidden="true"></span> Hard Skills
+                </NavLink>
+            </li>
+            @*<li class="nav-item px-3">
+                <NavLink class="nav-link" href="softskills">
+                    <span class="oi fa fa-puzzle-piece" aria-hidden="true"></span> Soft Skills
+                </NavLink>
+            </li>*@
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,46 @@
+﻿@page "/hardskills"
+@using MBPortfolio.Data
+@inject HardskillService hardskillsService
+
+
+<h2 class="font-weight-light border-bottom">HARD SKILLS</h2>
+
+@if (hardskills == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+        @foreach (var hardskill in hardskills)
+        {
+            <div class="m-2">
+                <MatCard class="demo-mat-card">
+                    <MatCardContent>
+                        <MatCard>
+                            <MatCardContent>
+
+                                <div class="demo-mat-card-content">
+                                    <MatHeadline6 class="demo-mat-card-clean-margin">
+                                        <img src="@hardskill.ImageLink" /> @hardskill.SkillName
+                                    </MatHeadline6>
+                                    <MatSubtitle2 class="demo-mat-card-clean-margin">
+                                        @hardskill.Details
+                                    </MatSubtitle2>
+                                </div>
+                            </MatCardContent>
+                        </MatCard>
+                    </MatCardContent>
+                </MatCard>
+            </div>
+        }
+
+}
+
+@code {
+    private List<MBPortfolio.Data.Skill> hardskills;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hardskills = await hardskillsService.GetHardskills();
+    }
+}
