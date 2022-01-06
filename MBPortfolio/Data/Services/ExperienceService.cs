@@ -51,14 +51,25 @@ namespace MBPortfolio.Data
                 ),
                 new Experience(
                 new DateTime(2018, 5, 1),
-                null,
-                jobTitle: "Sr. Software Developer C#/SQL",
+                new DateTime(2022, 1, 31),
+                jobTitle: "Software Developer C#/SQL",
                 companyName: "Odyssey Consultants - Nicosia, Cyprus",
                 duties: new List<string>()
                 {
                     "- Working with BigData and Elastic",
                     "- Working on web application with .NET Framework / Core",
                     "- Developing and maintaining iOS/Adroid applications based on Xamarin"
+                }
+                ),
+                new Experience(
+                new DateTime(2022, 2, 1),
+                null,
+                jobTitle: "Sr. Software Developer C#",
+                companyName: "Isx Financial - Nicosia, Cyprus",
+                duties: new List<string>()
+                {
+                    "- Working with online payments infrastructire",
+                    "- Working on web application with .NET Framework / Core"
                 }
                 )
             }.OrderByDescending(d => d.DateFrom).ToList());
