@@ -1,11 +1,150 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<UserSecretsId>d29adceb-3b5e-415c-9e95-1660ec7cc835</UserSecretsId>
+		<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MatBlazor" Version="2.8.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Remove="wwwroot\css\bootstrap\bootstrap.min.css" />
+		<Content Remove="wwwroot\css\bootstrap\bootstrap.min.js" />
+		<Content Remove="wwwroot\css\font-awesome\all.min.js" />
+		<Content Remove="wwwroot\css\font-awesome\fontawesome.min.css" />
+		<Content Remove="wwwroot\css\open-iconic\FONT-LICENSE" />
+		<Content Remove="wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css" />
+		<Content Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.eot" />
+		<Content Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.otf" />
+		<Content Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
+		<Content Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.ttf" />
+		<Content Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.woff" />
+		<Content Remove="wwwroot\css\open-iconic\ICON-LICENSE" />
+		<Content Remove="wwwroot\css\open-iconic\README.md" />
+		<Content Remove="wwwroot\css\site.css" />
+		<Content Remove="wwwroot\favicon.ico" />
+		<Content Remove="wwwroot\img\barchelors.png" />
+		<Content Remove="wwwroot\img\bg.png" />
+		<Content Remove="wwwroot\img\bkp\cs.png" />
+		<Content Remove="wwwroot\img\bkp\future.png" />
+		<Content Remove="wwwroot\img\bkp\html.png" />
+		<Content Remove="wwwroot\img\bkp\java.png" />
+		<Content Remove="wwwroot\img\bkp\sql.png" />
+		<Content Remove="wwwroot\img\bkp\xamarin.png" />
+		<Content Remove="wwwroot\img\cs.png" />
+		<Content Remove="wwwroot\img\css.png" />
+		<Content Remove="wwwroot\img\expert.png" />
+		<Content Remove="wwwroot\img\html.png" />
+		<Content Remove="wwwroot\img\java.png" />
+		<Content Remove="wwwroot\img\masters.png" />
+		<Content Remove="wwwroot\img\sql.png" />
+		<Content Remove="wwwroot\img\xamarin.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove=".dockerignore" />
+	  <None Remove="notaDF" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="wwwroot\css\bootstrap\bootstrap.min.css">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\bootstrap\bootstrap.min.js">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\font-awesome\all.min.js">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\font-awesome\fontawesome.min.css">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\open-iconic\FONT-LICENSE">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\open-iconic\font\fonts\open-iconic.eot">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\open-iconic\font\fonts\open-iconic.otf">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\open-iconic\font\fonts\open-iconic.svg">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\open-iconic\font\fonts\open-iconic.ttf">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\open-iconic\font\fonts\open-iconic.woff">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\open-iconic\ICON-LICENSE">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\open-iconic\README.md">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\css\site.css">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\favicon.ico">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\barchelors.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\bg.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\bkp\cs.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\bkp\future.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\bkp\html.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\bkp\java.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\bkp\sql.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\bkp\xamarin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\cs.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\css.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\expert.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\html.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\java.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\masters.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\sql.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\img\xamarin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MatBlazor" Version="2.8.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+	</ItemGroup>
 
 </Project>
