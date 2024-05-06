@@ -51,7 +51,7 @@ namespace MBPortfolio.Data
                 ),
                 new Experience(
                 new DateTime(2018, 5, 1),
-                new DateTime(2022, 1, 31),
+                new DateTime(2022, 1, 1),
                 jobTitle: "Software Developer C#/SQL",
                 companyName: "Odyssey Consultants - Nicosia, Cyprus",
                 duties: new List<string>()
@@ -62,14 +62,24 @@ namespace MBPortfolio.Data
                 }
                 ),
                 new Experience(
-                new DateTime(2022, 2, 1),
-                null,
+                new DateTime(2022, 1, 1),
+                new DateTime(2023,1,1),
                 jobTitle: "Sr. Software Developer C#",
                 companyName: "Isx Financial - Nicosia, Cyprus",
                 duties: new List<string>()
                 {
                     "- Working with online payments infrastructire",
                     "- Working on web application with .NET Framework / Core"
+                }),
+                new Experience(
+                new DateTime(2023, 1, 1),
+                null,
+                jobTitle: "Sr. Software Developer C#",
+                companyName: "Viva Wallet BI Data Service - Nicosia, Cyprus",
+                duties: new List<string>()
+                {
+                    "- Developing integration with varius Regulation Authorities for each European country",
+                    "- Working on application with .NET Core / Azure Datawarehouse / Azure Blob Storage"
                 }
                 )
             }.OrderByDescending(d => d.DateFrom).ToList());

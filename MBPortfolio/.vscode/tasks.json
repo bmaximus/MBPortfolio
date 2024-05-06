@@ -7,9 +7,9 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/MBPortfolio.csproj",
+                "${workspaceFolder}/MBPortfolio.sln",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -19,9 +19,9 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/MBPortfolio.csproj",
+                "${workspaceFolder}/MBPortfolio.sln",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -33,9 +33,10 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/MBPortfolio.csproj"
+                "${workspaceFolder}/MBPortfolio.sln"
             ],
             "problemMatcher": "$msCompile"
         }
+
     ]
 }
